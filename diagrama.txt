@@ -1,0 +1,45 @@
+Usar o plantext.com
+necessitando apenas copiar e colar o código abaixo para ver e editar o diagrama
+
+@startuml
+class User{
+  int id
+  string email
+  string password
+  string first_name
+  notes : Note
+
+}
+class Notes{
+  int id
+  string dados
+  date date
+  usuario : User
+}
+class SharedNotes{
+  nota : Note
+  destinatario : User
+}
+class Friendship {
+  id : User
+  friend: User
+}
+class ImageNote{
+  intid
+  string nome_img
+}
+class Group{
+  int id
+  string nome
+}
+class GroupUser{
+  usuario : User
+  grupo : Group
+}
+User o- Notes
+Notes o-- SharedNotes
+User o-- Friendship
+Notes o-- ImageNote
+GroupUser *-- Group
+User *- GroupUser
+@enduml

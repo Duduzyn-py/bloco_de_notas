@@ -7,4 +7,5 @@
  
 ![Diagrama de Classe](img/diagrama_classe.png)
 
+Até o presente momento (03/10/2021), apenas algumas rotas estão implementadas.
 
