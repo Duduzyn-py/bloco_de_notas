@@ -1,6 +1,7 @@
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+import os
 
 
 class Note(db.Model):
@@ -17,14 +18,24 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     notes = db.relationship('Note')
 
-class Shared_Note():
-    pass
+class SharedNote():
+    note = db.relationship('Note')
+    destinatario = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-class Access():
-    pass
+class Friendship():
+    user = db.relationship('User')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-class Note_Image:
-    pass
+class ImageNote:
+     id = db.Column(db.Integer, primary_key=True)
+     name = db.Column(db.String(10000))
+     date = db.Column(db.DateTime(timezone=True), default=func.now())
+     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-class Friends():
-    pass
+class Group():
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+
+class GroupUser():
+    usuario = db.relationship('User')
+    group = db.relationship('Group')
