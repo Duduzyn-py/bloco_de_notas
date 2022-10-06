@@ -15,8 +15,8 @@ Rotas a serem implementadas:
 
 <ul>
  <li>Adicionar amigos</li>
- <li>Listar amigos</li>
  <li>Excluir amigos</li>
+ <li>Listar amigos</li>
 </ul>
 
 <br>
@@ -26,8 +26,8 @@ Rotas a serem implementadas:
 </ul>
 <p>Referente à 'Group'</p>
 <ul>
- <li>Criar grupo</li>
- <li>Excluir grupo</li>
  <li>Adicionar membro</li>
  <li>Excluir membro</li>
+ <li>Excluir grupo</li>
+ <li>Criar grupo</li>
 </ul>
