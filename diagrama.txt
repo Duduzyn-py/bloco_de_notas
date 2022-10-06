@@ -1,5 +1,7 @@
 Usar o plantext.com
 necessitando apenas copiar e colar o código abaixo para ver e editar o diagrama
+https://www.planttext.com/
+
 
 @startuml
 class User{
