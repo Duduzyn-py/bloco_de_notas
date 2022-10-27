@@ -1,17 +1,16 @@
-import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
 
 db = SQLAlchemy()
-arquivobd = os.path.join(path, 'pessoas.db')
+DB_NAME = 'database.db'
 
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{arquivobd}'
+    app.config['SECRET_KEY'] = 'secret'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
     from .views import views
@@ -36,6 +35,6 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists('website/' + arquivobd):
+    if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
