@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from .models import Note
+from .models import User
 from . import db
 import json
 
@@ -35,3 +36,11 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
+
+"""
+@views.route('/add-friend', methods=['POST'])
+def add_friend(self, user):
+    if not self.is_friend(user):
+        self.friends.append(user)
+        return self
+"""
