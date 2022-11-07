@@ -1,0 +1,49 @@
+Teste de rota do projeto do Samuel:
+
+rota cadastro:
+
+  curl -X POST 191.52.7.79:5000/cadastro -d '{"nome":"Eduardinho Juan.","email":"eduardo@gmail.com","senha":"123123123"}' -H 'Content-Type: application/json'
+  {
+    "detalhes": " Usuario j\u00e1 existente", 
+    "resultado": "erro"
+  }
+
+rota login:
+
+  curl -X POST 191.52.7.79:5000/login -d '{"email":"eduardo@gmail.com" , "senha" : "123123123"}'
+  {
+    "detalhes": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2NzgyODc4MiwianRpIjoiMTYzMjMyOGItNzM3Zi00NDFkLTkzODctOGU0MzNlMGI5N2FkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImVkdWFyZG9AZ21haWwuY29tIiwibmJmIjoxNjY3ODI4NzgyLCJleHAiOjE2Njc4MjkzODJ9.Uy6lzCfLqOB8OWuJSGXIhbL1uKmGfXxNHMt8_HXCJuw"
+    }, 
+    "resultado": "ok"
+  }
+
+
+Teste do projeto do Igor:
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <script type="module">
+  import RefreshRuntime from "/@react-refresh"
+  RefreshRuntime.injectIntoGlobalHook(window)
+  window.$RefreshReg$ = () => {}
+  window.$RefreshSig$ = () => (type) => type
+  window.__vite_plugin_react_preamble_installed__ = true
+  </script>
+
+      <script type="module" src="/@vite/client"></script>
+
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+      <title>Moller</title>
+    </head>
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+    </body>
+  </html>
