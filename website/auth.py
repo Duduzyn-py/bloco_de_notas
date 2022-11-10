@@ -7,6 +7,11 @@ from flask_login import login_user, login_required, logout_user, current_user
 auth = Blueprint('auth', __name__)
 
 
+@auth.route("/", methods=['GET'])
+def home():
+    return f"""<h1>Back do Eduardo e Juan</h1>{request.host}
+            <a href="https://www.github.com/Duduzyn.py/bloco_de_nota">Link do repositório</a>"""
+    
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -25,7 +30,6 @@ def login():
             flash('Email does not exist.', category='error')
 
     return render_template('login.html', user=current_user)
-
 
 @auth.route('/logout')
 @login_required
@@ -58,9 +62,9 @@ def sign_up():
                             password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            login_user(new_user, remember=True)
             flash('Account created!', category='success')
             return redirect(url_for('views.home'))
 
-    return render_template('sign_up.html', user=current_user)
+    return render_template('sign_up.html', user=current_user) 
 
