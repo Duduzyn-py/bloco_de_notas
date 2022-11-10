@@ -10,7 +10,7 @@ auth = Blueprint('auth', __name__)
 @auth.route("/", methods=['GET'])
 def home():
     return f"""<h1>Back do Eduardo e Juan</h1>{request.host}
-            <a href="https://www.github.com/Duduzyn.py/bloco_de_nota">Link do repositório</a>"""
+            <a href="https://github.com/Duduzyn-py/bloco_de_notas">Link do repositório</a>"""
     
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
